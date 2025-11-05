@@ -19,3 +19,9 @@
 - services , Project practice
 - Ingress, Annotation, Statefull set
 ### [5. Day 5 {4-11-25} of Kubernetes](Day-5-4-11-25.md)
+- ConfigMaps, secrets
+- resource Quotas And Limits
+- Probes, Taints/Toleration
+### [6. Day 6 {5-11-25} of Kubernetes](Day-6-5-11-25.md)
+- HPA
+- VPA
