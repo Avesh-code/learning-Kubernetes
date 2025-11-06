@@ -25,3 +25,6 @@
 ### [6. Day 6 {5-11-25} of Kubernetes](Day-6-5-11-25.md)
 - HPA
 - VPA
+- Node Affinity
+### [7. Day 7 {6-11-25} of Kubernetes](Day-7-6-11-25.md)
+- Role Based Access Control
