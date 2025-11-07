@@ -1,0 +1,1000 @@
+ 1053  rm Master-Node_key.pem 
+ 1054  ls
+ 1055  rm Worker-node_key.pem 
+ 1056  ls
+ 1057  cd kubernetes/
+ 1058  ls
+ 1059  cd ..
+ 1060  ls
+ 1061  cd Downloads/
+ 1062  ls
+ 1063  ssh -i newMaster-Node_key.pem azureuser@40.90.195.150
+ 1064  scp ~/Downloads/newWorker-node.pem azureuser@40.90.195.150:~/home/azureuser/key/
+ 1065  ls
+ 1066  scp ~/newWorker-Node_key.pem azureuser@40.90.195.150:~/home/azureuser/key/
+ 1067  scp ~/Download/newWorker-Node_key.pem azureuser@40.90.195.150:~/home/azureuser/key/
+ 1068  scp ~/Downloads/newWorker-Node_key.pem azureuser@40.90.195.150:~/key/
+ 1069  scp -i ~/Downloads/newMaster-Node_key.pem ~/Downloads/newWorker-Node_key.pem azureuser@40.90.195.150:~/key/
+ 1070  ssh -i newMaster-Node_key.pem azureuser@40.90.195.150
+ 1071  cd ..
+ 1072  cd kubernetes/
+ 1073  ls
+ 1074  mkdir kind-cluster
+ 1075  ls
+ 1076  cd kind-cluster/
+ 1077  ls
+ 1078  cd..
+ 1079  cd ..
+ 1080  mkdir pract-kube
+ 1081  cd pract-kube/
+ 1082  ls
+ 1083  kubectl get namespace
+ 1084  kubectl get ns
+ 1085  history
+ 1086  kubectl get ns
+ 1087  kubectl get pods
+ 1088  kubectl get pods -n kube-system
+ 1089  kubectl create ns nginx
+ 1090  kubctl get ns
+ 1091  kubectl get ns
+ 1092  kubctl run nginx --image=nginx
+ 1093  kubectl run nginx --image=nginx
+ 1094  kubectl get pods
+ 1095  kubectl get pods -n nginx
+ 1096  kubectl delete pod nginx
+ 1097  kubectl  run nginx --image=nginx -n nginx
+ 1098  kubectl get pods -n nginx
+ 1099  kubectl get pods 
+ 1100  kubectl delete nginx
+ 1101  kubectl delete pod nginx -n nginx
+ 1102  kubectl delete namespace nginx
+ 1103  mkdir nginx
+ 1104  cd nginx/
+ 1105  vim namespace.yml
+ 1106  kubectl apply -f namespace.yml 
+ 1107  cat namespace.yml 
+ 1108  vim namespace.yml
+ 1109  kubectl get ns
+ 1110  vim pod.yml
+ 1111  kubectl appply -f pod.yml 
+ 1112  kubectl apply -f pod.yml 
+ 1113  kubectl get pods -ns nginx
+ 1114  kubectl get pods -n nginx
+ 1115  kubectl exec -it pod/nginx-pod -n nginx -- bash
+ 1116  kubectl describr pod/nginx-pod -n nginx
+ 1117  kubectl describe pod/nginx-pod -n nginx
+ 1118  vim deployment.yml
+ 1119  kubectl get pods -n nginx
+ 1120  kubectl delete -f pod.yml
+ 1121  kubectl apply -f deployment.yml 
+ 1122  vim deployment.yml 
+ 1123  kubectl apply -f deployment.yml 
+ 1124  vim deployment.yml 
+ 1125  kubectl apply -f deployment.yml 
+ 1126  kubectl get deployment -n nginx
+ 1127  kubectl get pods -n nginx
+ 1128  kubectl scale deployment/nginx-deployment -n nginx --replicas=5
+ 1129  kubectl get pods -n nginx
+ 1130  kubectl scale deployment/nginx-deployment -n nginx --replicas=1
+ 1131  kubectl get pods -n nginx
+ 1132  kubectl scale deployment/nginx-deployment -n nginx --replicas=10
+ 1133  kubectl get pods -n nginx
+ 1134  kubectl scale deployment/nginx-deployment -n nginx --replicas=2
+ 1135  kubectl get pods -n nginx
+ 1136  kubectl scale deployment/nginx-deployment -n nginx --replicas=5
+ 1137  kubectl get pods -n nginx
+ 1138  kubectl get pods -n nginx -o wide
+ 1139  kubectl rollout deployment/nginx-deployment -n nginx set image=nginx:1.27.3 
+ 1140  kubectl set image deployment/nginx-deployment -n nginx nginx=1.27.3
+ 1141  kubectl get pods
+ 1142  kubectl get pods -n naginx
+ 1143  kubectl get pods -n nginx
+ 1144  kubectl set image deployment/nginx-deployment -n nginx nginx=1.27.1
+ 1145  kubectl get pods -n nginx
+ 1146  kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:1.27.3
+ 1147  kubectl get pods -n nginx
+ 1148  kubectl set image deployment/nginx-deployment -n nginx nginx=1.27.1
+ 1149  kubectl get pods -n nginx
+ 1150  kubectl scale deployment/nginx-deployment -n nginx --replicas=2
+ 1151  kubectl get pods -n nginx
+ 1152  kubectl scale deployment/nginx-deployment -n nginx --replicas=1
+ 1153  kubectl get pods -n nginx
+ 1154  kubectl delete pod nginx-deployment-8459df4dcc-rr8rc -n nginx
+ 1155  kubectl get pods -n nginx
+ 1156  kubectl delete pod nginx-deployment-8459df4dcc-czk66 -n nginx
+ 1157  kubectl get pods -n nginx
+ 1158  kubectl delete pod nginx-deployment-8459df4dcc-xnnj6 -n nginx
+ 1159  kubectl get pods -n nginx
+ 1160  kubectl delete deployment -n nginx
+ 1161  kubectl delete deployment nginx-deployment -n nginx
+ 1162  kubectl get pods -n nginx
+ 1163  kubectl apply -f deployment.yml 
+ 1164  kubectl get pods -n nginx
+ 1165  cat namespace.yml 
+ 1166  cat pod.yml 
+ 1167  cat deployment.yml 
+ 1168  kubectl get deployment -n nginx
+ 1169  kubectl get pods -n nginx
+ 1170  history
+ 1171  ls
+ 1172  cp deployment.yml  replicaset.yml
+ 1173  ls
+ 1174  vim replicaset.yml 
+ 1175  kubectl apply -f replicaset.yml 
+ 1176  kubectl get replicaset.yml 
+ 1177  kubectl get replicasets -n nginx
+ 1178  kubectl get pods
+ 1179  kubectl get pods -n nginx
+ 1180  kubectl deplyment nginx-deployment -n nginx
+ 1181  kubectl deployment nginx-deployment -n nginx
+ 1182  kubectl delete deployment nginx-deployment -n nginx
+ 1183  kubectl get pods -n nginx
+ 1184  kubectl delete -f replicaset.yml 
+ 1185  vim daemonset.yml
+ 1186  cp replicaset.yml daemonset.yml 
+ 1187  ls
+ 1188  cat d
+ 1189  cat daemonset.yml 
+ 1190  vim daemonset.yml 
+ 1191  kubectl apply -f daemonset.yml 
+ 1192  kubectl get pod -n nginx
+ 1193  kubectl delete -f daemonset.yml 
+ 1194  kubectl get pod -n nginx
+ 1195  vim job.yml
+ 1196  kubectl apply -f job.yml 
+ 1197  vim job.yml
+ 1198  kubectl apply -f job.yml 
+ 1199  kubectl get job -n nginx
+ 1200  kubectl get pods -n nginx
+ 1201  kubectl logs pod/demo-job-b7pmw -n nginx
+ 1202  kubectl delete -f job.yml 
+ 1203  vim cron-job.yml
+ 1204  kubectl apply -f cron-job.yml 
+ 1205  vim cron-job.yml
+ 1206  kubectl apply -f cron-job.yml 
+ 1207  vim cron-job.yml
+ 1208  kubectl apply -f cron-job.yml 
+ 1209  vim cron-job.yml
+ 1210  kubectl apply -f cron-job.yml 
+ 1211  vim cron-job.yml
+ 1212  kubectl apply -f cron-job.yml 
+ 1213  kubectl get cronjob -n nginx
+ 1214  kubectl get pods -n nginx
+ 1215  kubectl logs minute-backup-29366572-n9tw6 -n nginx
+ 1216  kubectl delete -f cron-job.yml 
+ 1217  cat replicaset.yml 
+ 1218  history
+ 1219  cat daemonset.yml 
+ 1220  cat job.yml 
+ 1221  cat cron-job.yml 
+ 1222  history
+ 1223  docker ps
+ 1224  kubectl get nodes
+ 1225  kubectl get pods -n nginx -o wide
+ 1226  docker exec -it 5287a8b85008 bash
+ 1227  ls
+ 1228  kubectl get pods -n nginx
+ 1229  vim service.yml
+ 1230  kubectl apply -f service.yml 
+ 1231  vim service.yml
+ 1232  kubectl apply -f service.yml 
+ 1233  vim service.yml
+ 1234  kubectl apply -f service.yml 
+ 1235  kubectl get all -n nginx
+ 1236  ifconfig
+ 1237  kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0
+ 1238  sudo -E kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0
+ 1239  history
+ 1240  kubectl get all -n nginx
+ 1241  cd ..
+ 1242  ls
+ 1243  mkdir projects
+ 1244  cd pr
+ 1245  cd projects/
+ 1246  ls
+ 1247  git clone git@github.com:LondheShubham153/django-notes-app.git
+ 1248  ls
+ 1249  cd django-notes-app/
+ 1250  git checkout dev
+ 1251  ls
+ 1252  docker build -t notes-app-k8s
+ 1253  docker build -t notes-app-k8s .
+ 1254  docker images
+ 1255  docker login -u avesh03767
+ 1256  docker image tag notes-app-k8s:latest avesh03767/notes-app-k8s:latest
+ 1257  docker images
+ 1258  docker push avesh03767/notes-app-k8s:latest 
+ 1259  mkdir k8s
+ 1260  cd k8s
+ 1261  vim deployment.yml
+ 1262  vim namespace.yml
+ 1263  cat deployment
+ 1264  vim deployment.yml
+ 1265  vim service.yml
+ 1266  ls
+ 1267  kubectl apply -f namespace.yml
+ 1268  kubectl -f deployment.yml 
+ 1269  kubectl apply -f deployment.yml 
+ 1270  vim service.yml
+ 1271  vim deployment.yml
+ 1272  kubectl apply -f deployment.yml 
+ 1273  kubectl apply -f service.yml 
+ 1274  kubectl get pods -n notes-app
+ 1275  kubectl port-forward service/notes-app-service -n notes-app 8000:8000 --address=0.0.0.0
+ 1276  history
+ 1277  cat namespace.yml 
+ 1278  cat deployment.yml 
+ 1279  cat service.yml 
+ 1280  history
+ 1281  ls
+ 1282  vim deployment.yml 
+ 1283  vim service.yml 
+ 1284  kubectl get deployment -n notes-app
+ 1285  kubectl delete deployment -n notes-app
+ 1286  kubectl delete deployment/notes-app-deployment -n notes-app
+ 1287  kubectl delete service/notes-app-service -n notes-app
+ 1288  kubectl delete -n notes-app
+ 1289  kubectl delete ns notes-app
+ 1290  kubectl apply -f deployment.yml -f service.yml 
+ 1291  kubectl get pods -n nginx
+ 1292  kubectl get service -n nginx
+ 1293  cd ../../..
+ 1294  kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml
+ 1295  kubectl get ns
+ 1296  kubectl get pods -n ingress-nginx
+ 1297  kubectl get service -n ingress-nginx
+ 1298  ls
+ 1299  cd pract-kube/
+ 1300  ls
+ 1301  cd nginx/
+ 1302  vim ingress.yml
+ 1303  kubectl apply -f ingress.yml 
+ 1304  vim ingress.yml
+ 1305  kubectl apply -f ingress.yml 
+ 1306  vim ingress.yml
+ 1307  kubectl apply -f ingress.yml 
+ 1308  vim ingress.yml
+ 1309  kubectl apply -f ingress.yml 
+ 1310  kubectl get ingress -n nginx
+ 1311  kubectl get all -n nginx
+ 1312  kubectl get service -n ingress.yml 
+ 1313  kubectl get service -n ingress-nginx
+ 1314  kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1315  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1316  vim ingress.yml 
+ 1317  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1318  kubectl apply -f ingress.yml 
+ 1319  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1320  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8080:8080 --address=0.0.0.0
+ 1321  kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 8080:8080 --address=0.0.0.0
+ 1322  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1323  history
+ 1324  vim ingress.yml 
+ 1325  kubectl apply -f ingress.yml 
+ 1326  vim ingress.yml 
+ 1327  kubectl apply -f ingress.yml 
+ 1328  vim ingress.yml 
+ 1329  kubectl apply -f ingress.yml 
+ 1330  sudo -E kubectl port-forward service/ingress-nginx-controller -n ingress-nginx 80:80 --address=0.0.0.0
+ 1331  kubectl delete -f namespace.yml 
+ 1332  cd ..
+ 1333  mkdir mysql
+ 1334  cd mysql/
+ 1335  vim statefulset.yml
+ 1336  vim namespace.yml
+ 1337  kubectl apply -f namespace.yml 
+ 1338  vim namespace.yml
+ 1339  vim statefulset.yml
+ 1340  vim service.yml
+ 1341  vim statefulset.yml
+ 1342  kubectl apply -f service.yml 
+ 1343  vim service.yml
+ 1344  kubectl apply -f service.yml 
+ 1345  kubectl apply -f statefulset.yml 
+ 1346  vim statefulset.yml
+ 1347  kubectl apply -f statefulset.yml 
+ 1348  vim statefulset.yml
+ 1349  kubectl apply -f statefulset.yml 
+ 1350  vim statefulset.yml
+ 1351  kubectl apply -f statefulset.yml 
+ 1352  vim statefulset.yml
+ 1353  kubectl apply -f statefulset.yml 
+ 1354  vim statefulset.yml
+ 1355  kubectl apply -f statefulset.yml 
+ 1356  vim statefulset.yml
+ 1357  kubectl apply -f statefulset.yml 
+ 1358  vim statefulset.yml
+ 1359  kubectl apply -f statefulset.yml 
+ 1360  kubectl get pods -n mysql
+ 1361  watch kubectl apply -f statefulset.yml 
+ 1362  kubectl get pods -n mysql
+ 1363  kubectl exec -it mysql-statefulset-0 -n mysql -- bash
+ 1364  kubectl delete pod mysql-statefulset-0 -n mysql
+ 1365  kubectl get pods -n mysql
+ 1366  history
+ 1367  ls
+ 1368  cat namespace.yml 
+ 1369  cat service.yml 
+ 1370  cat statefulset.yml 
+ 1371  history
+ 1372  cd ../..
+ 1373  ls
+ 1374  cd projects/
+ 1375  ls
+ 1376  cd django-notes-app/
+ 1377  ls
+ 1378  cd ..
+ 1379  ls
+ 1380  cd projects/
+ 1381  cd django-notes-app/
+ 1382  ls
+ 1383  cd k8s/
+ 1384  ls
+ 1385  cat deployment.yml 
+ 1386  cat service.yml 
+ 1387  ls
+ 1388  cd ..
+ 1389  ls
+ 1390  cd kubernetes/
+ 1391  ls
+ 1392  cd kind-cluster/
+ 1393  ls
+ 1394  cd ..
+ 1395  ls
+ 1396  cd pract-kube/
+ 1397  ls
+ 1398  cd nginx/
+ 1399  ls
+ 1400  cat cron-job.yml 
+ 1401  vim persistent-volume.yml
+ 1402  kubectl apply -f persistent-volume.yml 
+ 1403  kubectl pv
+ 1404  kubectl get pv
+ 1405  vim persistent-volume-claim.yml
+ 1406  kubectl apply -f persistent-volume-claim.yml 
+ 1407  kubectl pv
+ 1408  kubectl get pv
+ 1409  kubectl get pvc
+ 1410  kuectl apply -f deployment.yml 
+ 1411  kubectl apply -f deployment.yml 
+ 1412  kubectl get deployment -n nginx
+ 1413  kubectl delete -f deployment.yml 
+ 1414  vim deployment.yml 
+ 1415  kubectl apply -f deployment.yml 
+ 1416  vim deployment.yml 
+ 1417  kubectl apply -f deployment.yml 
+ 1418  kubectl get pods -n nginx
+ 1419  kubectl describe pod nginx-deployment-7cd5f7d67c-jkpbk -n nginx
+ 1420  vim persistent-volume.yml 
+ 1421  vim persistent-volume-claim.yml 
+ 1422  kubectl get pods -n nginx
+ 1423  kubectl delete -f deployment.yml 
+ 1424  kubectl apply -f deployment.yml 
+ 1425  kubectl get pods -n nginx
+ 1426  kubectl delete pvc/local-pvc
+ 1427  kubectl delete pv/local-pv
+ 1428  kubectl apply -f persistent-volume.yml 
+ 1429  kubectl get pv -n nginx
+ 1430  kubectl apply -f persistent-volume-claim.yml 
+ 1431  kubectl get pvc -n nginx
+ 1432  kubectl apply -f deployment.yml 
+ 1433  kubectl get pods -n nginx
+ 1434  kubectl get pods -n nginx -o wide
+ 1435  kubectl get nodes
+ 1436  cd /mnt/data
+ 1437  docker ps
+ 1438  sudo groupadd docker
+ 1439  sudo usermod -aG docker $USER
+ 1440  history
+ 1441  newgrp docker
+ 1442  cd ..
+ 1443  cd mysql/
+ 1444  ls
+ 1445  vim statefulset.yml 
+ 1446  ifconfig
+ 1447  history
+ 1448  ls
+ 1449  cat configMap.yml 
+ 1450  cat secret.yml 
+ 1451  cat statefulset.yml 
+ 1452  ls
+ 1453  cd kubernetes/
+ 1454  ls
+ 1455  cd pract-kube/
+ 1456  ls
+ 1457  cd mysql/
+ 1458  ls
+ 1459  cat statefulset.yml 
+ 1460  vim configMap.yml
+ 1461  kubectl apply -f configMap.yml 
+ 1462  kubectl get configmap -n mysql
+ 1463  vim s
+ 1464  vim statefulset.yml 
+ 1465  kubectl apply -f statefulset.yml 
+ 1466  vim statefulset.yml 
+ 1467  kubectl get statefulset -n mysql
+ 1468  kubectl delete mysql-statefulset -n mysql
+ 1469  kubectl delete statefulset/mysql-statefulset -n mysql
+ 1470  kubectl apply -f statefulset.yml 
+ 1471  vim statefulset.yml 
+ 1472  kubectl apply -f statefulset.yml 
+ 1473  kubectl get pods -n mysql
+ 1474  vim secret.yml
+ 1475  echo "root" | base64
+ 1476  vim secret.yml
+ 1477  vim statefulset.yml 
+ 1478  kubectl apply -f statefulset.yml 
+ 1479  kubectl get secret -n mysql
+ 1480  kubectl apply -f secret.yml 
+ 1481  kubectl get secret -n mysql
+ 1482  kubectl apply -f statefulset.yml 
+ 1483  kubectl get pods -n mysql
+ 1484  kubectl apply -f statefulset.yml 
+ 1485  kubectl get pods -n mysql
+ 1486  kubectl delete statefulset/mysql-statefulset -n mysql
+ 1487  kubectl get pods -n mysql
+ 1488  kubectl apply -f statefulset.yml 
+ 1489  kubectl get pods -n mysql
+ 1490  kubectl exec -it mysql-statefulset-1 -n mysql -- bash
+ 1491  kubectl delete -f namespace.yml
+ 1492  cd ..
+ 1493  cd nginx/
+ 1494  ls
+ 1495  vim deployment.yml 
+ 1496  kubectl apply -f namespace.yml 
+ 1497  kubectl apply -f persistent-volume.yml 
+ 1498  kubectl apply -f persistent-volume-claim.yml 
+ 1499  kubectl apply -f deployment.yml 
+ 1500  kubectl get pods -n nginx
+ 1501  kubectl describe nginx-deployment-d98689d69-bjb7g -n nginx
+ 1502  kubectl describe pod nginx-deployment-d98689d69-bjb7g -n nginx
+ 1503  kubectl get pv -n nginx
+ 1504  kubectl delete pv local-pv -n nginx
+ 1505  kubectl apply -f persistent-volume.yml 
+ 1506  kubectl get pods -n nginx
+ 1507  kubectl apply -f persistent-volume-claim.yml 
+ 1508  kubectl apply -f deployment.yml 
+ 1509  kubectl get pods -n nginx
+ 1510  kubectl get pods -n nginx -o wide
+ 1511  docker ps
+ 1512  sudo usermod -aG docker $USER
+ 1513  history
+ 1514  newgrp docker
+ 1515  docker ps
+ 1516  kubectl get pods -n nginx -o wide
+ 1517  docker ps
+ 1518  docker exec -it 35a5b164876a bash
+ 1519  kubectl delete -n namespace.yml 
+ 1520  kubectl delete -f namespace.yml 
+ 1521  kubectl apply -f namespace.yml
+ 1522  kubectl apply -f persistent-volume.yml 
+ 1523  kubectl apply -f persistent-volume-claim.yml 
+ 1524  vim deployment.yml 
+ 1525  kubectl delete pv local-pv -n nginx
+ 1526  kubectl apply -f persistent-volume.yml 
+ 1527  kubectl apply -f persistent-volume-claim.yml 
+ 1528  kubectl apply -f deployment.yml 
+ 1529  vim deployment.yml 
+ 1530  kubectl apply -f deployment.yml 
+ 1531  kubectl get pods -n nginx -o wide
+ 1532  kubectl describe nginx-deployment-84c8d77b97-f2wlr -n nginx
+ 1533  kubectl describe pods nginx-deployment-84c8d77b97-f2wlr -n nginx
+ 1534  cat deployment.yml 
+ 1535  ifconfig
+ 1536  docker logs c4e44fcae5e4
+ 1537  sudo usermod -aG docker $USER
+ 1538  newgrp docker
+ 1539  docker ps
+ 1540  docker logs 18ae216c925d
+ 1541  docker images
+ 1542  docker rm 18ae216c925d
+ 1543  docker stop 18ae216c925d
+ 1544  cd ../..
+ 1545  ls
+ 1546  ab -n 1000 -c 100 https://marly-bubbly-dewitt.ngrok-free.dev
+ 1547  sudo apt install apache2-utils
+ 1548  ab -n 1000 -c 100 https://marly-bubbly-dewitt.ngrok-free.dev
+ 1549  ab -n 1000 -c 100 https://marly-bubbly-dewitt.ngrok-free.dev/
+ 1550  ab -n 1000000 -c 100 https://marly-bubbly-dewitt.ngrok-free.dev/
+ 1551  while true; do wget -q -O- http://apache-serice.apache.svc.cluster.local; done
+ 1552  kubectl get all -n apache
+ 1553  kubectl get hpa -n apache
+ 1554  kubectl pods
+ 1555  kubectl get pods
+ 1556  kubectl get pods -n apache
+ 1557  kubectl delete pod load-generator -n apache
+ 1558  kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+ 1559  ls
+ 1560  cd ..
+ 1561  ls
+ 1562  cd kubernetes/
+ 1563  cd pract-kube/
+ 1564  ls
+ 1565  cd apache/
+ 1566  ls
+ 1567  sudo -E kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1568  kubectl get services
+ 1569  kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1570  sudo -E kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1571  ls
+ 1572  cd docker-doc/
+ 1573  ls
+ 1574  cd ..
+ 1575  cd docker
+ 1576  ls
+ 1577  cd Projects/
+ 1578  ls
+ 1579  cd ..
+ 1580  cd docker
+ 1581  ls
+ 1582  cd volumes/
+ 1583  ls
+ 1584  cd mysql/
+ 1585  ls
+ 1586  cd ..
+ 1587  mkdir docker-projects
+ 1588  ls
+ 1589  cd docker-projects/
+ 1590  ls
+ 1591  git clone https://github.com/LondheShubham153/simple-java-docker.git
+ 1592  ls
+ 1593  cd simple-java-docker/
+ 1594  ls
+ 1595  cd src
+ 1596  ls
+ 1597  cd ..
+ 1598  cat Dockerfile
+ 1599  rm -r Dockerfile 
+ 1600  ls
+ 1601  vim Dockerfile
+ 1602  docker build -t simple-java Dockerfile 
+ 1603  sudo usermod -aG docker $USER
+ 1604  newgrp docker
+ 1605  docker build -t simple-java Dockerfile 
+ 1606  ls
+ 1607  docker build -t simple-java .
+ 1608  vim Dockerfile 
+ 1609  docker build -t simple-java .
+ 1610  docker pull openjdk:17
+ 1611  docker pull eclipse-temurin:17
+ 1612  vim Dockerfile 
+ 1613  docker build -t simple-java .
+ 1614  docker images
+ 1615  docker run simple-java
+ 1616  docker rmi -f c6b5532e987b
+ 1617  docker images
+ 1618  docker r
+ 1619  docker images
+ 1620  docker build -t simple-java .
+ 1621  docker images
+ 1622  docker run d35eb2c92122
+ 1623  cd ..
+ 1624  ls
+ 1625  cd simple-java-docker/
+ 1626  ls -a
+ 1627  rm -r .git
+ 1628  ls
+ 1629  ls -a
+ 1630  cd ..
+ 1631  ls
+ 1632  git clone https://github.com/LondheShubham153/flask-app-ecs.git
+ 1633  cd flask-app-ecs/
+ 1634  ls
+ 1635  cat Dockerfile
+ 1636  cp Dockerfile Docker-ex
+ 1637  ls
+ 1638  vim Docker
+ 1639  ls
+ 1640  rm Docker
+ 1641  vim Dockerfile
+ 1642  docker build -t python-app .
+ 1643  docker images
+ 1644  docker run python-app:latest 
+ 1645  ls -a
+ 1646  rm -r .git
+ 1647  ls -a
+ 1648  cd ..
+ 1649  git clone https://github.com/LondheShubham153/node-todo-cicd.git
+ 1650  cd node-todo-cicd/
+ 1651  ls
+ 1652  cat D
+ 1653  cat Dockerfile 
+ 1654  docker build -t node-app .
+ 1655  docker images
+ 1656  docker run node-app
+ 1657  ls -as
+ 1658  rm -r .git
+ 1659  ls -a
+ 1660  rm -r .gitignore 
+ 1661  ls -a
+ 1662  cd ..
+ 1663  ls
+ 1664  git clone https://github.com/LondheShubham153/two-tier-flask-app.git
+ 1665  cd two-tier-flask-app/
+ 1666  ls
+ 1667  ls 0-a
+ 1668  ls -a
+ 1669  rm .git
+ 1670  rm -r .git
+ 1671  ls -a
+ 1672  cat Dockerfile
+ 1673  docker build -t two-tier-backend-app .
+ 1674  docker pull mysql
+ 1675  docker images
+ 1676  docker run -d -e MYSQL_ROOT_PASSWORD=root mysql
+ 1677  docker exec -it 7c236dbf5717 -- bash
+ 1678  docker exec -it 7c236dbf5717 bash
+ 1679  docker network create mynetwork -d bridge
+ 1680  docker network rm mynetwork
+ 1681  docker network create two-tier -d bridge
+ 1682  docker run -d --name mysql --network two-tier -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=devops mysql
+ 1683  docker run -d -p 5000:5000 --network two-tier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier-backend-app:latest
+ 1684  docker ps
+ 1685  docker logs d93c4ee752ce
+ 1686  docker stop 7b3630f677b5
+ 1687  docker stop d93c4ee752ce
+ 1688  docker rm 7b3630f677b5
+ 1689  docker ps
+ 1690  docker volume ls
+ 1691  docker volume create mysql-data
+ 1692  docker inspect mysql-data
+ 1693  docker run -d --name mysql --network two-tier -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=devops mysql
+ 1694  docker ps
+ 1695  docker rm f25e45c1653e
+ 1696  docker stop f25e45c1653e
+ 1697  docker rm f25e45c1653e
+ 1698  docker ps
+ 1699  ls
+ 1700  cat docker-compose.yml 
+ 1701  ls
+ 1702  cp docker-compose.yml docker-compse-ex.yml
+ 1703  ls
+ 1704  vim docker-compose.yml 
+ 1705  docker compose up
+ 1706  docker compose down
+ 1707  docker compose up
+ 1708  docker compose down
+ 1709  docker ps
+ 1710  docker ps -aq
+ 1711  docker ps -a
+ 1712  docker rm $(docker ps -aq)
+ 1713  docker ps -a
+ 1714  docker stop 7c236dbf5717
+ 1715  docker rm 7c236dbf5717
+ 1716  docker ps -a
+ 1717  ls
+ 1718  ls -a
+ 1719  wq
+ 1720  cd ..
+ 1721  ls
+ 1722  cd ..
+ 1723  cd docker-projects/
+ 1724  git checkout -b projects
+ 1725  git init
+ 1726  git remote add origin git@github.com:Avesh-code/Docker.git
+ 1727  git checkout -b projects
+ 1728  ls
+ 1729  git add .
+ 1730  git status
+ 1731  git commit -m "Add projects files"
+ 1732  git push -u origin projects
+ 1733  ls
+ 1734  cd ..
+ 1735  ls
+ 1736  cd kubernetes/
+ 1737  ls
+ 1738  cd pr
+ 1739  cd projects/
+ 1740  ls
+ 1741  cd django-notes-app/
+ 1742  ls
+ 1743  ls -a
+ 1744  rm -r .git .gitignore 
+ 1745  ls -a
+ 1746  cd k8s/
+ 1747  ls
+ 1748  kubectl get nodes
+ 1749  kubectl top node
+ 1750  kubectl top pod
+ 1751  kubectl get ns
+ 1752  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 1753  kubectl -n kube-system edit deployment metrics-server
+ 1754  kubectl -n kube-system rollout restart deployment metrics-server
+ 1755  kubectl get pods -n kube-system
+ 1756  kubectl top nodes
+ 1757  kubectl get pods -n kube-system
+ 1758  docker node
+ 1759  kubectl get node
+ 1760  kubectl taint node avesh-cluster-worker prod=true:NoSchedule-
+ 1761  kubectl taint node avesh-cluster-worker2 prod=true:NoSchedule-
+ 1762  kubectl taint node avesh-cluster-worker3 prod=true:NoSchedule-
+ 1763  kubectl get pods -n kube-system
+ 1764  kubectl top nodes
+ 1765  kubectl top node
+ 1766  kubectl top pod
+ 1767  kubectl top pod -n nginx
+ 1768  cd ../..
+ 1769  cd .
+ 1770  cd ..
+ 1771  ls
+ 1772  cd pract-kube/
+ 1773  ls
+ 1774  cd nginx/
+ 1775  ls
+ 1776  kubectl delete -f pod.yml
+ 1777  kubectl top pod -n nginx
+ 1778  kubectl top pod -n mysql
+ 1779  kubectl top pod 
+ 1780  cd ..
+ 1781  mkdir apache
+ 1782  cd apache/
+ 1783  ls
+ 1784  vim namespace.yml
+ 1785  kubectl apply -f namespace.yml 
+ 1786  vim deployment.yml
+ 1787  kubectl apply -f deployment.yml 
+ 1788  vim deployment.yml
+ 1789  kubectl apply -f deployment.yml 
+ 1790  kubectl get pods -n apache
+ 1791  vim service.yml
+ 1792  kubectl apply -f service.yml 
+ 1793  vim service.yml
+ 1794  kubectl apply -f service.yml 
+ 1795  kubectl get all -n apache
+ 1796  curl http://apache-service.default.svc.local
+ 1797  curl http://apache-service.apache.svc.local
+ 1798  kubectl describe svc apache-service -n apache
+ 1799  kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1800  sudo -E kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1801  kubectl get pods -n apache
+ 1802  kubectl scale deployment apache-deployment -n apache --replicas=3
+ 1803  kubectl get pods -n apache
+ 1804  vim hpa.yml
+ 1805  kubectl scale deployment apache-deployment -n apache --replicas=1
+ 1806  kubectl get pods -n apache
+ 1807  sudo -E kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1808  kubectl get hpa -n apache
+ 1809  kubectl apply -f hpa.yml 
+ 1810  kubectl get hpa -n apache
+ 1811  kubectl run -it load-generator --image=busybox -n apache -- bash
+ 1812  kubectl get pods -n apache
+ 1813  kubectl describe pod load-generator -n apache
+ 1814  kubectl delete pod load-generator -n apache
+ 1815  kubectl run load-generator --image=busybox -n apache
+ 1816  kubectl get pods -n apache
+ 1817  kubectl delete pod load-generator -n apache
+ 1818  kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+ 1819  sudo -E kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+ 1820  kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+ 1821  kubectl delete pod load-generator -n apache
+ 1822  kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+ 1823  curl http://localhost:82
+ 1824  curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+ 1825  ngrok config add-authtoken 352vHWolOvWoK5Chza4zZLBvB3P_7pvmMTT3oUvMMTNghLWCf
+ 1826  ngrok http 80
+ 1827  ngrok http 82
+ 1828  history
+ 1829  cd ..
+ 1830  ls
+ 1831  cd ..
+ 1832  cd projects/
+ 1833  ls
+ 1834  cd django-notes-app/
+ 1835  ls
+ 1836  cd k8s
+ 1837  ls
+ 1838  vim deployment.yml 
+ 1839  vim hpa.yml
+ 1840  kubectl apply -f deployment.yml 
+ 1841  kubectl get pods -n nginx
+ 1842  cd ..
+ 1843  cd kubernetes/
+ 1844  ls
+ 1845  cd pract-kube/
+ 1846  cd apache/
+ 1847  ls
+ 1848  cat hpa.yml 
+ 1849  hii
+ 1850  cd kubernetes/
+ 1851  ls
+ 1852  cd projects/
+ 1853  ls
+ 1854  cd django-notes-app/
+ 1855  cd k8s/
+ 1856  ls
+ 1857  kubectl get all -n nginx
+ 1858  kubectl apply -f service.yml 
+ 1859  kubectl get all -n nginx
+ 1860  kubectl get pods -n nginx
+ 1861  kubectl apply -f hpa.yml 
+ 1862  kubectl get hpa -n nginx
+ 1863  kubectl get all -n nginx
+ 1864  kubectl get deployment metrics-server -n kube-system
+ 1865  kubectl logs -n kube-system -l k8s-app=metrics-server
+ 1866  kubectl get hpa -n nginx
+ 1867  kubectl top pods -n nginx
+ 1868  kubectl get deployment metrics-server -n kube-system
+ 1869  kubectl get pods -n kube-system -l k8s-app=metrics-server
+ 1870  kubectl get pods -n kube-system -l k8s-app=metrics-server -o wide
+ 1871  kubectl logs -n kube-system -l k8s-app=metrics-server --tail=200
+ 1872  kubectl describe deploy metrics-server -n kube-system
+ 1873  kubectl get apiservices | grep metrics
+ 1874  kubectl describe apiservice v1beta1.metrics.k8s.io
+ 1875  kubectl get svc metrics-server -n kube-system -o wide
+ 1876  kubectl describe svc metrics-server -n kube-system
+ 1877  kubectl get endpoints metrics-server -n kube-system -o yaml
+ 1878  kubectl top pods -n nginx
+ 1879  kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 1880  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 1881  kubectl -n kube-system patch deployment metrics-server --type='json' -p='[{"op":"add","path":"/spec/template/spec/containers/0/args/-","value":"--kubelet-insecure-tls"}]'
+ 1882  kubectl rollout restart deployment metrics-server -n kube-system
+ 1883  kubectl get apiservices v1beta1.metrics.k8s.io -o wide
+ 1884  kubectl describe apiservice v1beta1.metrics.k8s.io
+ 1885  kubectl get --raw "/apis/metrics.k8s.io/v1beta1/nodes" | jq .
+ 1886  kubectl top pods -n nginx
+ 1887  kubectl delete -n nginx
+ 1888  kubectl delete ns nginx
+ 1889  kubectl get ns
+ 1890  kubectl get ns nginx -o jsonpath='{.status.phase}'
+ 1891  kubectl get namespace nginx -o json
+ 1892  kubectl patch namespace nginx -p '{"spec":{"finalizers":[]}}' --type=merge
+ 1893  kubectl replace --raw "/api/v1/namespaces/nginx/finalize" -f - <<'EOF'
+ 1894  {
+ 1895    "apiVersion": "v1",
+ 1896    "kind": "Namespace",
+ 1897    "metadata": { "name": "nginx" },
+ 1898    "spec": { "finalizers": [] }
+ 1899  }
+ 1900  EOF
+ 1901  kubectl get ns
+ 1902  kubectl get namespace nginx -o json  # should return NotFound or no finalizers
+ 1903  kubectl get ns
+ 1904  cd kubernetes/
+ 1905  ls
+ 1906  cd pract-kube/
+ 1907  ls
+ 1908  cd apache/
+ 1909  ls
+ 1910  git clone git@github.com:kubernetes/autoscaler.git
+ 1911  cd autoscaler/
+ 1912  cd vertical-pod-autoscaler/
+ 1913  ./hack/vpa-up.sh
+ 1914  cd ..
+ 1915  vim vpa.yml
+ 1916  kubectl get pod -n apache
+ 1917  kubectl delete pod load-generator -n apache
+ 1918  kubectl get pod -n apache
+ 1919  kubectl get hpa -n apache
+ 1920  kubectl delete -f hpa.yml 
+ 1921  kubectl get hpa -n apache
+ 1922  kubectl apply -f vpa.yml 
+ 1923  wq
+ 1924  vim vpa.yml
+ 1925  kubectl apply -f vpa.yml 
+ 1926  kubectl get vpa -n apache
+ 1927  watch kubectl get vpa -n apache
+ 1928  kubectl get vpa -n apache
+ 1929  wtch kubectl get vpa -n apache
+ 1930  watch kubectl get vpa -n apache
+ 1931  kubectl get svc -n apache
+ 1932  kubectl get pods -n apache
+ 1933  kubectl get vpa -n apache
+ 1934  kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+ 1935  kubectl top pod -n apache
+ 1936  kubectl get apiservices | grep metrics
+ 1937  kubectl describe apiservice v1beta1.metrics.k8s.io
+ 1938  kubectl get svc metrics-server -n kube-system -o wide
+ 1939  kubectl describe svc metrics-server -n kube-system
+ 1940  kubectl get endpoints metrics-server -n kube-system -o yaml
+ 1941  kubectl get svc metrics-server -n kube-system -o yaml
+ 1942  kubectl get pods -n kube-system -l k8s-app=metrics-server -o wide
+ 1943  kubectl describe pod -n kube-system -l k8s-app=metrics-server
+ 1944  POD=$(kubectl get pods -n kube-system -l k8s-app=metrics-server -o jsonpath='{.items[0].metadata.name}')
+ 1945  kubectl logs -n kube-system $POD --tail=200
+ 1946  kubectl patch svc metrics-server -n kube-system --type='json' -p='[{"op":"replace","path":"/spec/ports/0/targetPort","value":4443}]'
+ 1947  kubectl get endpoints metrics-server -n kube-system -o yaml   # should show port 4443
+ 1948  kubectl get apiservices | grep metrics
+ 1949  kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 1950  # Double-check and delete any leftovers manually
+ 1951  kubectl delete deployment metrics-server -n kube-system --ignore-not-found
+ 1952  kubectl delete service metrics-server -n kube-system --ignore-not-found
+ 1953  kubectl delete apiservice v1beta1.metrics.k8s.io --ignore-not-found
+ 1954  kubectl get deployment -n kube-system | grep metrics-server
+ 1955  kubectl get svc -n kube-system | grep metrics-server
+ 1956  kubectl get apiservices | grep metrics
+ 1957  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 1958  kubectl -n kube-system edit deployment metrics-server
+ 1959  kubectl -n kube-system rollout restart deployment metrics-server
+ 1960  kubectl get pods -n kube-system
+ 1961  kubectl top nodes
+ 1962  kubectl top nodes -n apache
+ 1963  kubectl get pods -n kube-system
+ 1964  kubectl top nodes -n apache
+ 1965  kubectl get apiservices v1beta1.metrics.k8s.io -o wide
+ 1966  kubectl get svc metrics-server -n kube-system -o yaml
+ 1967  kubectl get endpoints metrics-server -n kube-system -o yaml
+ 1968  kubectl get svc metrics-server -n kube-system -o yaml
+ 1969  kubectl patch svc metrics-server -n kube-system --type='json' -p='[{"op":"replace","path":"/spec/ports/0/targetPort","value":4443}]'
+ 1970  kubectl get endpoints metrics-server -n kube-system -o yaml
+ 1971  kubectl get apiservices v1beta1.metrics.k8s.io -o wide
+ 1972  kubectl top node
+ 1973  kubectl top node -n apache
+ 1974  ls
+ 1975  cat namespace.yml 
+ 1976  cat deployment.yml 
+ 1977  cat service.yml 
+ 1978  mv service.yml server.yml
+ 1979  mv server.yml service.
+ 1980  ls
+ 1981  rm service. service.yml
+ 1982  touch service.yml > kind: Service
+ 1983  apiVersion: v1
+ 1984  metadata:
+ 1985  spec:
+ 1986  ls
+ 1987  rm kind:
+ 1988  cat Service 
+ 1989  rm Service 
+ 1990  cat service.yml 
+ 1991  vim service.yml 
+ 1992  cat hpa.yml 
+ 1993  history
+ 1994  ls
+ 1995  cat vpa.yml 
+ 1996  vim role.yml 
+ 1997  cat role.yml 
+ 1998  kubectl apply -f role.yml 
+ 1999  kubectl auth can-i get pods --as=apache-user -n apache
+ 2000  kubectl auth can-i get deployment --as=apache-user -n apache
+ 2001  vim role.yml 
+ 2002  kubectl apply -f role.yml 
+ 2003  kubectl auth can-i get deployment --as=apache-user -n apache
+ 2004  kubectl auth can-i get service --as=apache-user -n apache
+ 2005  kubectl auth can-i get hpa --as=apache-user -n apache
+ 2006  vim role.yml 
+ 2007  kubectl apply -f role.yml 
+ 2008  kubectl auth can-i get hpa --as=apache-user -n apache
+ 2009  kubectl auth can-i delete pods --as=apache-user -n apache
+ 2010  vim role.yml 
+ 2011  cp role.yml role-2.yml
+ 2012  vim -r role.yml 
+ 2013  vim  role.yml 
+ 2014  rm role.yml
+ 2015  cp role-2.yml role.yml
+ 2016  cat role.yml 
+ 2017  rm role-2.yml 
+ 2018  vim  role.yml 
+ 2019  kubectl apply -f role.yml 
+ 2020  kubectl auth can-i list pods --as=apache-user -n apache
+ 2021  cd ..
+ 2022  mkdir dashboard
+ 2023  ls
+ 2024  cd dashboard/
+ 2025  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+ 2026  ls
+ 2027  vim dashboard-admin-user.yml
+ 2028  kubectl get clusterrole -n kubernetes-dashboard
+ 2029  vim dashboard-admin-user.yml
+ 2030  kubectl apply -f dashboard-admin-user.yml 
+ 2031  vim dashboard-admin-user.yml
+ 2032  kubectl apply -f dashboard-admin-user.yml 
+ 2033  vim dashboard-admin-user.yml
+ 2034  kubectl apply -f dashboard-admin-user.yml 
+ 2035  kubectl proxy
+ 2036  kubectl -n kubernetes-dashboard create token admin-user
+ 2037  kubectl proxy --address=0.0.0.0
+ 2038  kubectl proxy
+ 2039  kubectl proxy --accept-hosts='.*'
+ 2040  kubectl proxy --port:8001 --accept-hosts='.*'
+ 2041  kubectl proxy --port=8001 --accept-hosts='.*'
+ 2042  kubectl proxy --port=8001 --address=0.0.0.0 --accept-hosts='.*'
+ 2043  kubectl proxy 
+ 2044  kubectl proxy --v=8
+ 2045  kubectl proxy --port=8080
+ 2046  nohup kubectl proxy > proxy.log 2>&1 &
+ 2047  ls
+ 2048  cat proxy.log
+ 2049  history
+ 2050  kubectl get all -n kubernetes-dashboard
+ 2051  nohup history > cmd.log
+ 2052  history > cmd.log
