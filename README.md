@@ -28,3 +28,7 @@
 - Node Affinity
 ### [7. Day 7 {6-11-25} of Kubernetes](Day-7-6-11-25.md)
 - Role Based Access Control
+- Monitoring and Logging
+### [8. Day 8 {7-11-25} of Kubernetes](Day-8-7-11-25.md)
+- Monitoring and Logging
+- 
