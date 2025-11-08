@@ -31,4 +31,7 @@
 - Monitoring and Logging
 ### [8. Day 8 {7-11-25} of Kubernetes](Day-8-7-11-25.md)
 - Monitoring and Logging
+- Confrence on AMD GPU Server
+- Custom Resource Definition (CRD)
+### [9. Day 9 {8-11-25} of Kubernetes](Day-9-8-11-25.md)
 - 
