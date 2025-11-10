@@ -39,5 +39,5 @@
 - Init Container
 - Sidecar Container
 ### [10. Day 10 {10-11-25} of Kubernetes](Day-10-10-11-25.md)
-- Service Mess
+- Service Mesh
 - Project Practical Practice
