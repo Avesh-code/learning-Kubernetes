@@ -34,4 +34,10 @@
 - Confrence on AMD GPU Server
 - Custom Resource Definition (CRD)
 ### [9. Day 9 {8-11-25} of Kubernetes](Day-9-8-11-25.md)
-- 
+- Operator
+- helm
+- Init Container
+- Sidecar Container
+### [10. Day 10 {10-11-25} of Kubernetes](Day-10-10-11-25.md)
+- Service Mess
+- Project Practical Practice
