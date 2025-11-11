@@ -41,5 +41,6 @@
 ### [10. Day 10 {10-11-25} of Kubernetes](Day-10-10-11-25.md)
 - Service Mesh
 - Project Practical Practice
-### 11. Day 11 {11-11-25} of Kubernetes
+### [11. Day 11 {11-11-25} of Kubernetes]()
 - Project Practice
+- Kubernetes Monitoring using Prometheus and Grafana
