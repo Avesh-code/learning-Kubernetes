@@ -44,3 +44,6 @@
 ### [11. Day 11 {11-11-25} of Kubernetes](Day-11-11-11-25.md)
 - Project Practice
 - Kubernetes Monitoring using Prometheus and Grafana
+### [12. Day 12 {12-11-25} of Kubernetes](Day-12-12-11-25.md)
+- Project and using monitoring Tools
+- Bare-metal Installation of Prometheus, Node Exporter, Grafana
